@@ -21,9 +21,13 @@ export default class App extends Component {
     const localStorageRef = localStorage.getItem("todo-item");
     this.setState({ todoData: JSON.parse(localStorageRef) });
   }
-
+  
   componentDidUpdate() {
     localStorage.setItem("todo-item", JSON.stringify(this.state.todoData));
+  }
+  
+  componentDidMount() {
+    localStorage.setItem("todo-item", "");
   }
 
   createTodoItem(label) {

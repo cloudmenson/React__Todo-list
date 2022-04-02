@@ -14,12 +14,11 @@ export default class App extends Component {
   };
 
   componentDidMount() {
-    const localStorageRef = localStorage.getItem("todo-item");
-    this.setState({ todoData: JSON.parse(localStorageRef) });
-  }
-  
-    componentWillUnmount() {
-    localStorage.setItem("todo-item", JSON.stringify(this.state.todoData));
+    {
+      const localStorageRef = localStorage.getItem("todo-item")
+        ? this.setState({ todoData: JSON.parse(localStorageRef) })
+        : this.state.todoData;
+    }
   }
   
   componentDidUpdate() {

@@ -18,6 +18,10 @@ export default class App extends Component {
     this.setState({ todoData: JSON.parse(localStorageRef) });
   }
   
+    componentWillUnmount() {
+    localStorage.setItem("todo-item", JSON.stringify(this.state.todoData));
+  }
+  
   componentDidUpdate() {
     localStorage.setItem("todo-item", JSON.stringify(this.state.todoData));
   }

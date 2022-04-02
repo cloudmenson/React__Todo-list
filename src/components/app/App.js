@@ -8,11 +8,7 @@ import "./App.css";
 export default class App extends Component {
   maxId = 100;
   state = {
-    todoData: [
-      this.createTodoItem("Home work"),
-      this.createTodoItem("Cooking"),
-      this.createTodoItem("Front-end course"),
-    ],
+    todoData: [],
     term: "",
     filter: "all",
   };
